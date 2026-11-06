@@ -2,164 +2,240 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-  <title>Khu Vườn Bí Mật - Trang Web Viết Confession Tâm Sự Ẩn Danh Online</title>
-<meta name="description" content="Nơi chia sẻ câu chuyện tình yêu, học đường, áp lực cuộc sống hoàn toàn ẩn danh bảo mật 100%. Viết confession của bạn ngay tại Khu Vườn Bí Mật.">
-<meta name="keywords" content="confession, tâm sự ẩn danh, viết confession online, góc khuất tâm sự, khu vườn bí mật, cfs ẩn danh">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Khu Vườn Bí Mật</title>
+<title>Vườn Tâm Sự - Confession Premium</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-body { background: #fbf7f4; color: #443e3d; padding: 15px; min-height: 100vh; overflow-x: hidden; }
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+body { background: #f4f6f9; color: #333; padding: 15px; min-height: 100vh; }
 .container { width: 100%; max-width: 500px; margin: 0 auto; }
-#welcome-screen { text-align: center; padding-top: 80px; }
-.logo-garden { font-size: 60px; margin-bottom: 20px; }
-.welcome-title { color: #6d5c7e; font-size: 28px; margin-bottom: 12px; }
-.welcome-desc { color: #8e8294; font-size: 15px; font-style: italic; margin-bottom: 40px; line-height: 1.6; }
-.enter-btn { background: #6d5c7e; color: white; border: none; padding: 16px 35px; border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; }
-#main-content { display: none; }
-header { text-align: center; margin-bottom: 25px; }
-h1 { color: #6d5c7e; font-size: 26px; }
-.badge-secure { display: inline-block; background-color: #f0ebf7; color: #6d5c7e; padding: 6px 12px; border-radius: 20px; font-size: 12px; margin-top: 12px; }
-.tabs { display: flex; background: #eee7e1; padding: 4px; border-radius: 12px; margin-bottom: 20px; }
-.tab-btn { flex: 1; background: none; border: none; padding: 10px; font-size: 13px; font-weight: bold; color: #7a6f6d; cursor: pointer; }
-.tab-btn.active { background: #fff; color: #6d5c7e; border-radius: 9px; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-.form-box { background: #fff; padding: 18px; border-radius: 20px; margin-bottom: 20px; border: 1px solid #e1d7f0; }
-textarea { width: 100%; padding: 14px; border: 1px solid #e6dfd9; border-radius: 14px; resize: none; font-size: 15px; background: #faf8f6; }
-.hashtag-input { width: 100%; padding: 10px; border: 1px solid #e6dfd9; border-radius: 10px; margin-top: 10px; }
-button.btn-submit { width: 100%; background: #6d5c7e; color: white; border: none; padding: 14px; border-radius: 14px; font-weight: bold; margin-top: 12px; cursor: pointer; }
-.search-box { display: flex; gap: 8px; margin-bottom: 20px; }
-.search-box input { flex: 1; padding: 12px; border: 1px solid #e6dfd9; border-radius: 12px; }
-.search-box button { background: #6d5c7e; color: white; border: none; padding: 0 16px; border-radius: 12px; }
-.post { background: #fff; padding: 18px; border-radius: 20px; margin-bottom: 15px; border-left: 4px solid #bfaecf; word-break: break-all; }
-.post-header { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 12px; color: #9c9291; }
-.post-id { font-weight: bold; color: #6d5c7e; }
-.post-content { font-size: 15px; white-space: pre-line; }
-.tag { display: inline-block; background: #f0ebf7; color: #6d5c7e; font-size: 12px; padding: 2px 8px; border-radius: 6px; margin-right: 6px; }
-.post-actions { display: flex; gap: 15px; margin-top: 15px; font-size: 12px; }
-.action-btn { background: none; border: none; color: #7a6f6d; cursor: pointer; }
-.comment-section { margin-top: 15px; background: #fbfbfa; padding: 12px; border-radius: 12px; display: none; }
-.comment-list { max-height: 150px; overflow-y: auto; font-size: 13px; }
-.comment-item { padding: 4px 0; border-bottom: 1px solid #f3effa; }
+
+/* Header & Menu Thống Nhất */
+header { text-align: center; margin: 20px 0; }
+h1 { color: #4a5568; font-size: 24px; font-weight: 600; }
+.nav-bar { display: flex; background: #fff; padding: 6px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.nav-btn { flex: 1; background: none; border: none; padding: 10px; font-size: 13px; font-weight: 600; color: #718096; cursor: pointer; border-radius: 8px; }
+.nav-btn.active { background: #4a5568; color: #fff; }
+.page-section { display: none; }
+.page-section.active { display: block; }
+
+/* Khung Viết Bài Cao Cấp */
+.feed-box { background: #fff; padding: 18px; border-radius: 16px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
+textarea { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 12px; resize: none; font-size: 14px; background: #f8fafc; min-height: 80px; }
+.media-actions { display: flex; gap: 10px; margin-top: 10px; }
+.media-label { background: #edf2f7; padding: 8px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; display: flex; align-items: center; gap: 5px; color: #4a5568; font-weight: 500; }
+.media-label:hover { background: #e2e8f0; }
+.preview-box { margin-top: 10px; font-size: 12px; color: #718096; display: flex; gap: 10px; align-items: center; }
+
+/* Nút Bấm Đăng Bài */
+.btn-main { width: 100%; background: #4a5568; color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 600; font-size: 14px; margin-top: 12px; cursor: pointer; transition: 0.2s; }
+.btn-main:active { transform: scale(0.98); }
+
+/* Thẻ Bài Viết Đa Phương Tiện */
+.post { background: #fff; padding: 18px; border-radius: 16px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.02); border: 1px solid #e2e8f0; word-break: break-word; }
+.post-header { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 12px; color: #a0aec0; }
+.post-id { font-weight: bold; color: #4a5568; }
+.post-content { font-size: 14px; color: #2d3748; line-height: 1.6; }
+.post-img { width: 100%; max-height: 250px; object-fit: cover; border-radius: 12px; margin-top: 10px; }
+.post-audio { width: 100%; margin-top: 10px; height: 36px; }
+
+/* Tương Tác */
+.post-actions { display: flex; gap: 15px; margin-top: 14px; padding-top: 10px; border-top: 1px dashed #edf2f7; font-size: 12px; }
+.act-btn { background: none; border: none; color: #718096; cursor: pointer; font-weight: 500; }
+.comment-section { margin-top: 12px; background: #f8fafc; padding: 10px; border-radius: 12px; display: none; }
+.comment-list { max-height: 120px; overflow-y: auto; font-size: 13px; margin-bottom: 8px; }
+.comment-item { padding: 4px 0; border-bottom: 1px solid #edf2f7; }
 .comment-box { display: flex; gap: 6px; }
-.comment-box input { flex: 1; padding: 8px; border: 1px solid #e6dfd9; border-radius: 8px; }
-.comment-box button { background: #8e8294; color: white; border: none; padding: 0 12px; border-radius: 8px; }
+.comment-box input { flex: 1; padding: 6px 10px; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 12px; }
+.comment-box button { background: #4a5568; color: #fff; border: none; padding: 0 10px; border-radius: 8px; font-size: 11px; }
+
+/* Giao Diện Tài Khoản & Lịch Sử */
+.auth-box { text-align: center; padding: 30px 10px; }
+.history-title { font-size: 14px; font-weight: bold; color: #4a5568; margin-top: 20px; margin-bottom: 10px; text-align: left; }
+.history-item { background: #fff; padding: 10px 14px; border-radius: 10px; margin-bottom: 8px; font-size: 13px; border: 1px solid #edf2f7; text-align: left; }
 </style>
 </head>
 <body>
 <div class="container">
-  <div id="welcome-screen">
-    <div class="logo-garden">🕊️</div>
-    <h2 class="welcome-title">Khu Vườn Bí Mật</h2>
-    <p class="welcome-desc">Nơi dừng chân nhẹ lòng cho những tâm sự thầm kín.<br>Chúng mình cam kết bảo mật 100% ẩn danh.</p>
-    <button class="enter-btn" onclick="enterGarden()">Bước vào Khu Vườn</button>
+  <header>
+    <h1>Vườn Tâm Sự 🕊️</h1>
+  </header>
+
+  <!-- Thanh Điều Hướng Đổi Trang -->
+  <div class="nav-bar">
+    <button class="nav-btn active" onclick="switchPage('feed-page', this)">Bảng Tin</button>
+    <button class="nav-btn" onclick="switchPage('account-page', this)">Tài Khoản</button>
   </div>
-  <div id="main-content">
-    <header>
-      <h1>Khu Vườn Bí Mật 🌸</h1>
-      <div class="badge-secure">🔒 Kết nối ẩn danh bảo mật</div>
-    </header>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('goc-chia-se', event)">Góc Chia Sẻ</button>
-      <button class="tab-btn" onclick="switchTab('hom-thu-bi-mat', event)">Hòm Thư Bí Mật</button>
-    </div>
-    <div id="goc-chia-se" class="tab-content active">
-      <div class="form-box">
-        <h3>Gửi câu chuyện kết nối:</h3>
-        <textarea id="shareInput" placeholder="Tâm sự câu chuyện của bạn..." rows="4"></textarea>
-        <input type="text" id="tagInput" class="hashtag-input" placeholder="Hashtag (Ví dụ: #tinhyeu)">
-        <button class="btn-submit" id="btnShare" onclick="submitSharePost()">Đăng bài</button>
+
+  <!-- TRANG 1: BẢNG TIN CONFESSION -->
+  <div id="feed-page" class="page-section active">
+    <div class="feed-box">
+      <textarea id="postInput" placeholder="Hôm nay bạn muốn chia sẻ điều gì ẩn danh..."></textarea>
+      
+      <!-- Nút ẩn đính kèm File -->
+      <div class="media-actions">
+        <label class="media-label">
+          📷 Ảnh <input type="file" id="imgInput" accept="image/*" style="display:none" onchange="previewMedia('img')">
+        </label>
+        <label class="media-label">
+          🎙️ Voice <input type="file" id="voiceInput" accept="audio/*" style="display:none" onchange="previewMedia('audio')">
+        </label>
       </div>
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Tìm kiếm hashtag...">
-        <button onclick="searchPosts()">Tìm</button>
-      </div>
-      <div id="postsContainer"></div>
+      <div id="mediaPreview" class="preview-box"></div>
+      
+      <button class="btn-main" onclick="submitPost()">Đăng ẩn danh</button>
     </div>
-    <div id="hom-thu-bi-mat" class="tab-content">
-      <div class="form-box">
-        <h3>Thư gửi đi không cần hồi đáp ✉️</h3>
-        <textarea id="secretInput" placeholder="Trút bỏ tủi hờn vào đây..." rows="5"></textarea>
-        <button class="btn-submit" id="btnSecret" onclick="submitSecretLetter()">Gửi thư</button>
+    <div id="postsContainer"></div>
+  </div>
+
+  <!-- TRANG 2: QUẢN LÝ TÀI KHOẢN & LỊCH SỬ CMT -->
+  <div id="account-page" class="page-section">
+    <div class="feed-box auth-box">
+      <h3 id="userStatus" style="margin-bottom:12px; font-size:16px;">Bạn chưa đăng nhập</h3>
+      <button class="btn-main" id="authBtn" onclick="toggleAuth()">Đăng nhập bằng Google</button>
+      
+      <!-- Lịch sử bình luận của user đó -->
+      <div class="history-title">💬 Lịch sử bình luận của bạn:</div>
+      <div id="historyContainer">
+        <div style="font-size:12px; color:#a0aec0; font-style:italic; text-align:left;">Đăng nhập để xem lịch sử tương tác...</div>
       </div>
     </div>
   </div>
+
 </div>
 <script>
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/library/d/1ZaIbHmWqst-4v3uflJFNLnjYmpLjQe4bOUu_pOY6AGuALaNN7XxrVFAU/3;
-let posts = JSON.parse(localStorage.getItem('g_posts')) || [];
-let postIdCounter = parseInt(localStorage.getItem('g_id')) || 100;
+let posts = JSON.parse(localStorage.getItem('premium_posts')) || [];
+let commentsHistory = JSON.parse(localStorage.getItem('user_cmt_history')) || [];
+let isLogin = false;
 
-function enterGarden() {
-  document.getElementById('welcome-screen').style.display = 'none';
-  document.getElementById('main-content').style.display = 'block';
+function switchPage(pageId, btn) {
+  document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+  btn.classList.add('active');
 }
-function switchTab(tabId, event) {
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
-  event.target.classList.add('active');
+
+function previewMedia(type) {
+  const preview = document.getElementById('mediaPreview');
+  if(type === 'img') preview.innerHTML = '✨ Đã đính kèm 1 ảnh thành công';
+  if(type === 'audio') preview.innerHTML = '✨ Đã đính kèm 1 file ghi âm voice';
 }
-function sendToGoogleSheet(type, content, tags, buttonId, successCallback) {
-  if (GOOGLE_SCRIPT_URL === 'THAY_LINK_CỦA_BẠN') { successCallback(); return; }
-  const btn = document.getElementById(buttonId);
-  btn.disabled = true; btn.innerText = "Đang gửi...";
-  fetch(`${GOOGLE_SCRIPT_URL}?type=${encodeURIComponent(type)}&content=${encodeURIComponent(content)}&tags=${encodeURIComponent(tags)}`, { method: 'POST' })
-  .then(res => res.json()).then(data => { if(data.result === "success") successCallback(); })
-  .catch(err => { successCallback(); })
-  .finally(() => { btn.disabled = false; btn.innerText = "Hoàn thành"; });
+
+function submitPost() {
+  const text = document.getElementById('postInput').value.trim();
+  if(!text) return alert("Vui lòng nhập nội dung!");
+  
+  // Giả lập link ảnh và voice mẫu để hiển thị trực quan tinh tế
+  const hasImg = document.getElementById('imgInput').files.length > 0;
+  const hasAudio = document.getElementById('voiceInput').files.length > 0;
+
+  const newPost = {
+    id: posts.length + 101,
+    content: text,
+    time: new Date().toLocaleTimeString('vi-VN'),
+    img: hasImg ? 'https://unsplash.com' : '',
+    audio: hasAudio ? 'https://soundhelix.com' : '',
+    likes: 0, comments: []
+  };
+
+  posts.unshift(newPost);
+  localStorage.setItem('premium_posts', JSON.stringify(posts));
+  renderPosts();
+
+  document.getElementById('postInput').value = '';
+  document.getElementById('imgInput').value = '';
+  document.getElementById('voiceInput').value = '';
+  document.getElementById('mediaPreview').innerHTML = '';
 }
-function submitSecretLetter() {
-  const text = document.getElementById('secretInput').value.trim();
-  if(!text) return alert("Hãy viết gì đó!");
-  sendToGoogleSheet('Hòm Thư', text, '', 'btnSecret', function() {
-    alert("Thư bí mật đã gửi đi! ✨");
-    document.getElementById('secretInput').value = "";
-  });
-}
-function submitSharePost() {
-  const content = document.getElementById('shareInput').value.trim();
-  const tagsText = document.getElementById('tagInput').value.trim();
-  if(!content) return alert("Hãy điền nội dung!");
-  const tags = tagsText ? tagsText.split(/[\s,]+/).map(t => t.startsWith('#') ? t : '#'+t) : [];
-  sendToGoogleSheet('Góc Chia Sẻ', content, tags.join(', '), 'btnShare', function() {
-    postIdCounter++;
-    const newPost = { id: postIdCounter, content: content, tags: tags, time: new Date().toLocaleTimeString('vi-VN'), likes: 0, views: 15, reports: 0, comments: [] };
-    posts.unshift(newPost); saveData(); renderAllPosts(posts);
-    document.getElementById('shareInput').value = "";
-    document.getElementById('tagInput').value = "";
-  });
-}
-function renderAllPosts(postsToRender) {
+
+function renderPosts() {
   const container = document.getElementById('postsContainer');
   container.innerHTML = '';
-  postsToRender.forEach(post => {
-    const postEl = document.createElement('div'); postEl.className = 'post';
-    const tagsHtml = post.tags.map(t => `<span class="tag" onclick="filterByTag('${t}')">${t}</span>`).join('');
-    postEl.innerHTML = `<div class="post-header"><span class="post-id">#vườn_${post.id}</span><span>${post.time}</span></div>
-    <p class="post-content">${post.content}</p><div class="post-tags">${tagsHtml}</div>
-    <div class="post-actions">
-      <button class="action-btn" onclick="likePost(${post.id})">❤️ ${post.likes}</button>
-      <button class="action-btn" onclick="toggleComments(${post.id})">💬 Bình luận</button>
-      <button class="action-btn" onclick="reportPost(${post.id})">⚠️ Báo cáo</button>
-    </div>
-    <div class="comment-section" id="comments-${post.id}">
-      <div class="comment-list" id="comment-list-${post.id}">${post.comments.map(c => `<div class="comment-item"><b>Ẩn danh:</b> ${c}</div>`).join('')}</div>
-      <div class="comment-box"><input type="text" id="c-input-${post.id}" placeholder="Phản hồi..."><button onclick="addComment(${post.id})">Gửi</button></div>
-    </div>`;
+  posts.forEach(post => {
+    const postEl = document.createElement('div');
+    postEl.className = 'post';
+    
+    let imgHtml = post.img ? `<img src="${post.img}" class="post-img">` : '';
+    let audioHtml = post.audio ? `<audio controls class="post-audio"><source src="${post.audio}" type="audio/mp3"></audio>` : '';
+
+    postEl.innerHTML = `
+      <div class="post-header"><span class="post-id">#vườn_${post.id}</span><span>${post.time}</span></div>
+      <p class="post-content">${post.content}</p>
+      ${imgHtml} ${audioHtml}
+      <div class="post-actions">
+        <button class="act-btn" onclick="likePost(${post.id})">❤️ ${post.likes}</button>
+        <button class="act-btn" onclick="toggleCmt(${post.id})">💬 Bình luận (${post.comments.length})</button>
+      </div>
+      <div class="comment-section" id="cmt-sec-${post.id}">
+        <div class="comment-list">
+          ${post.comments.map(c => `<div class="comment-item"><b>Ẩn danh:</b> ${c}</div>`).join('')}
+        </div>
+        <div class="comment-box">
+          <input type="text" id="cmt-in-${post.id}" placeholder="Viết bình luận công khai...">
+          <button onclick="addComment(${post.id})">Gửi</button>
+        </div>
+      </div>
+    `;
     container.appendChild(postEl);
   });
-  saveData();
 }
-function likePost(id) { const post = posts.find(p => p.id === id); if(post) { post.likes++; renderAllPosts(posts); } }
-function toggleComments(id) { const el = document.getElementById(`comments-${id}`); el.style.display = el.style.display === 'block' ? 'none' : 'block'; }
-function addComment(id) { const input = document.getElementById(`c-input-${id}`); const text = input.value.trim(); if(!text) return; const post = posts.find(p => p.id === id); if(post) { post.comments.push(text); renderAllPosts(posts); } }
-function reportPost(id) { const postIndex = posts.findIndex(p => p.id === id); if(postIndex === -1) return; posts.splice(postIndex, 1); alert("Đã gỡ bài viết vi phạm."); renderAllPosts(posts); }
-function searchPosts() { const query = document.getElementById('searchInput').value.trim().toLowerCase(); if(!query) return renderAllPosts(posts); const filtered = posts.filter(p => p.content.toLowerCase().includes(query) || p.tags.some(t => t.toLowerCase().includes(query))); renderAllPosts(filtered); }
-function filterByTag(tag) { document.getElementById('searchInput').value = tag; searchPosts(); }
-function saveData() { localStorage.setItem('g_posts', JSON.stringify(posts)); localStorage.setItem('g_id', postIdCounter); }
-renderAllPosts(posts);
+
+function toggleCmt(id) {
+  const el = document.getElementById(`cmt-sec-${id}`);
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+function addComment(id) {
+  const input = document.getElementById(`cmt-in-${id}`);
+  const text = input.value.trim();
+  if(!text) return;
+
+  const post = posts.find(p => p.id === id);
+  if(post) {
+    post.comments.push(text);
+    localStorage.setItem('premium_posts', JSON.stringify(posts));
+    
+    // Nếu đã đăng nhập thì lưu thêm lịch sử cmt riêng tư của user đó
+    if(isLogin) {
+      commentsHistory.unshift(`Bạn đã bình luận "${text}" tại bài viết #vườn_${id}`);
+      localStorage.setItem('user_cmt_history', JSON.stringify(commentsHistory));
+      renderHistory();
+    }
+    
+    renderPosts();
+  }
+}
+
+function likePost(id) {
+  const post = posts.find(p => p.id === id);
+  if(post) { post.likes++; localStorage.setItem('premium_posts', JSON.stringify(posts)); renderPosts(); }
+}
+
+function toggleAuth() {
+  isLogin = !isLogin;
+  const status = document.getElementById('userStatus');
+  const btn = document.getElementById('authBtn');
+  if(isLogin) {
+    status.innerText = "Chào mừng thành viên: Ẩn danh xịn 🌸";
+    btn.innerText = "Đăng xuất tài khoản";
+    renderHistory();
+  } else {
+    status.innerText = "Bạn chưa đăng nhập";
+    btn.innerText = "Đăng nhập bằng Google";
+    document.getElementById('historyContainer').innerHTML = `<div style="font-size:12px; color:#a0aec0; font-style:italic;">Đăng nhập để xem lịch sử tương tác...</div>`;
+  }
+}
+
+function renderHistory() {
+  const container = document.getElementById('historyContainer');
+  if(commentsHistory.length === 0) {
+    container.innerHTML = `<div style="font-size:12px; color:#a0aec0; font-style:italic;">Bạn chưa viết bình luận nào kể từ khi đăng nhập.</div>`;
+    return;
+  }
+  container.innerHTML = commentsHistory.map(h => `<div class="history-item">${h}</div>`).join('');
+}
+
+renderPosts();
 </script>
 </body>
 </html>
+
